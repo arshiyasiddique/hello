@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mzaakscluster-b877"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mzaakscluster-b877"
+  template:
+    metadata:
+      labels:
+        app: "mzaakscluster-b877"
+    spec:
+      containers:
+        - name: "mzaakscluster-b877"
+          image: "mzacr123.azurecr.io/mzaakscluster"
+          ports:
+          - containerPort: 80
